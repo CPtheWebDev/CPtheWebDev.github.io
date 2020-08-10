@@ -9,12 +9,12 @@
   </head>
   <body class="grid">
     
-     <nav class="flex main-nav">
+     <nav class="main-nav">
       <div>
         <h1>My Web Developer Portfolio</h1>
         <p>Designed By Chris Patton</p>
       </div>
-      <ul>
+      <ul class="flex">
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -22,8 +22,10 @@
     </nav>
     
     <header class="flex" id="about">
-      <p>My goal is to become a professional Web Developer. I am currently learning how to code and improving my skills. I aspire to create well construced, aesthetically pleasing, dynamic websites.</p>
-      <p>I'm looking to focus my energy and settle into one craft that can become a long term career.</p>
+      <div class="info flex">
+        <p>My goal is to become a professional Web Developer. I am currently learning how to code and improving my skills. I aspire to create well construced, aesthetically pleasing, dynamic websites.</p>
+        <p>I'm looking to focus my energy and settle into one craft that can become a long term career.</p>
+      </div>
       <img class="profile-pic" src="images/me.jpg" alt="A picture of Christopher Patton">
     </header>
     
@@ -55,10 +57,20 @@
           <p>Using fetch this project grabs information for 12 random employees from an API and diplays the employess in a directory.</p>
           <a href="https://cpthewebdev.github.io/techdegree-project-8/"><img src="images/Projects/employee-directory.png"></a>
         </div>
+        <div class="project contact2">
+          <h2>Contact Me</h2>
+          <p>Feel free to reach out!</p>
+          <a class="github" href="https://github.com/CPtheWebDev"></a>
+          <address>
+            Phone: (216) 905-1178<br>
+            Email: <a href="mailto:cpatton302@gmail.com">cpatton302@gmail.com</a>
+          </address>
+          <p>Copyright 2020, Christopher Patton</p>
+        </div>
       </div>
     </main>
     
-    <footer class="flex">
+    <footer class="contact1 flex">
       <h2 id="contact">Contact Me</h2>
       <p>Feel free to reach out!</p>
       <a class="github" href="https://github.com/CPtheWebDev"></a>
@@ -69,8 +81,13 @@
       <p>Copyright 2020, Christopher Patton</p>
     </footer>
     
-    <nav class="secondary-nav flex">
-      <a href="#">&uarr; Back to Top &uarr;</a>
+    <nav class="secondary-nav">
+      <a class="to-top" href="#">&uarr; Back to Top &uarr;</a>
+      <ul class="flex">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
   
   </body>

@@ -29,7 +29,8 @@ footer {
 }
 header,
 footer,
-.main-nav,
+.main-nav ul,
+.info,
 .project {
   flex-direction: column;
 }
@@ -41,11 +42,15 @@ footer,
   border-radius: 50%;
   margin-top: 1em;
   margin-bottom: 1em;
+  box-shadow: -10px 10px 50px grey;
 }
 .project img {
   height: 125px;
   width: 200px;
   border-radius: 2px;
+}
+.project img:hover {
+  transform: scale(1.1);
 }
 .profile-pic,
 .project img {
@@ -53,7 +58,6 @@ footer,
 }
 .profile-pic,
 .project a,
-.secondary-nav a,
 .github {
   margin-left: auto;
   margin-right: auto;
@@ -70,16 +74,15 @@ h1 {
 .main-nav ul {
   padding-left: 0;
 }
-.main-nav li {
+nav li {
   border-top: 1px solid #f9f9f9;
   border-bottom: 1px solid #f9f9f9;
   padding-top: 5px;
   padding-bottom: 5px;
   margin: 5px 0;
-
 }
 .main-nav div,
-main h2 {
+main > h2 {
   color: #f9f9f9;
   border-bottom: 5px dashed #042738;
   padding-bottom: 1em;
@@ -110,5 +113,47 @@ body,
   background-image: url(../images/github.svg);
   width: 30px;
   height: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 1em;
+}
+.contact2, 
+.secondary-nav ul {
+  display: none;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .main-nav ul,
+  header {
+    flex-direction: row;
+  }
+  nav ul,
+  .info {
+    justify-content: space-around;
+  }
+  .info,
+  .profile-pic {
+    margin-right: 7%;
+  }
+  .project-container {
+    grid-template-columns: 50% 50%;
+    border-bottom: 5px dashed #042738;
+    padding-bottom: 1em;
+  }
+  .project {
+    margin: 1em;
+  }
+  .contact1, 
+  .to-top {
+    display: none;
+  }
+  .contact2, 
+  .secondary-nav ul {
+    display: flex;
+  }
+  ul li {
+    width: 40%;
+  }
+  ul li:nth-child(3) {
+    display: none;
+  }
 }
