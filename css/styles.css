@@ -1,0 +1,114 @@
+/* Base Styles */
+* {
+  font-family: "proxima-nova",sans-serif;
+  
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+nav a {
+  color: #ff4141;
+}
+nav,
+header,
+main,
+footer {
+  text-align: center;
+}
+
+/* Grid and Flexbox */
+.flex {
+  display: flex;
+}
+.grid {
+  display: grid;
+  grid-row-gap: 10px;
+}
+header,
+footer,
+.main-nav,
+.project {
+  flex-direction: column;
+}
+
+/* Images */
+.profile-pic {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.project img {
+  height: 125px;
+  width: 200px;
+  border-radius: 2px;
+}
+.profile-pic,
+.project img {
+  border: 2px solid #074a6a;
+}
+.profile-pic,
+.project a,
+.secondary-nav a,
+.github {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Main Content */
+h1 {
+  font-size: 20px;
+  
+}
+.main-nav p {
+  font-size: 15px;
+}
+.main-nav ul {
+  padding-left: 0;
+}
+.main-nav li {
+  border-top: 1px solid #f9f9f9;
+  border-bottom: 1px solid #f9f9f9;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: 5px 0;
+
+}
+.main-nav div,
+main h2 {
+  color: #f9f9f9;
+  border-bottom: 5px dashed #042738;
+  padding-bottom: 1em;
+}
+.main-nav ul,
+header,
+main,
+footer {
+  margin-left: 10px;
+  margin-right: 10px;
+  
+}
+header,
+footer,
+.project {
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  padding: 10px;
+}
+body, 
+.project-container {
+  background-color: #074a6a;
+}
+.secondary-nav {
+  margin: 1em 0;
+}
+.github {
+  background-image: url(../images/github.svg);
+  width: 30px;
+  height: 30px;
+  margin-bottom: 10px;
+}
