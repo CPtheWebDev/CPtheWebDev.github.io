@@ -10,7 +10,7 @@ a {
   text-decoration: none;
 }
 nav a {
-  color: #ff4141;
+  color: #f9f9f9;
 }
 nav,
 header,
@@ -32,7 +32,7 @@ footer {
 }
 header,
 footer,
-.main-nav ul,
+.menu-ul,
 .info,
 .project,
 .contact2 {
@@ -80,8 +80,8 @@ h1 {
   padding-left: 0;
 }
 nav li {
-  border-top: 1px solid #f9f9f9;
-  border-bottom: 1px solid #f9f9f9;
+  border-top: 1px solid #042738;
+  border-bottom: 1px solid #042738;
   padding-top: 5px;
   padding-bottom: 5px;
   margin: 5px 0;
@@ -134,7 +134,8 @@ body,
   width: 30px;
   height: 30px;
 }
-.contact2, 
+.contact2,
+.hidden-ul, 
 .secondary-nav ul,
 .slide-container,
 .slide-triggers {
@@ -185,9 +186,23 @@ body,
   } 
 } 
 
+/* Dropdown Menu */
+.menu-button {
+  background-color: #333;
+  color: #f9f9f9;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  margin: 2em auto 0;
+  padding: .5em;
+  width: 90%;
+}
+.menu-button:focus {
+  border: 1px solid #ff4141;
+}
+
 /* Media Queries */
 @media (min-width: 768px) {
-  .main-nav ul,
   header {
     flex-direction: row;
   }
@@ -216,14 +231,14 @@ body,
   ul li {
     width: 40%;
   }
+  .contact1, 
+  .to-top,
+  .menu-button, 
   ul li:nth-child(3) {
     display: none;
   }
-  .contact1, 
-  .to-top {
-    display: none;
-  }
-  .contact2, 
+  .contact2,
+  .hidden-ul, 
   .secondary-nav ul {
     display: flex;
   }
@@ -245,7 +260,7 @@ body,
   }
   ul li {
     width: 25%;
-    border: 1px solid #f9f9f9;
+    border: 1px solid #042738;
   }
   .info p {
     background-color: #f9f9f9;
@@ -285,8 +300,8 @@ body,
     order: 1;
   }
   .project {
-    min-height: 550px;
     margin: auto 10%;
+    min-height: 550px;
   }
   .project-container {
     display: none;
@@ -299,6 +314,8 @@ body,
   }
   .project p {
     order: 1;
+    width: 80%;
+    margin: auto;
   }
   .project,
   .contact1 {

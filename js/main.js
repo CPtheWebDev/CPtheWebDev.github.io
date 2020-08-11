@@ -1,7 +1,10 @@
+// Global Variables
+const dropdown = document.querySelector(".menu-ul");
 const slideContainer = document.querySelector(".slide-container");
 const slideTriggers = document.querySelectorAll(".trigger");
 let slideIndex = 0; 
 
+// an array of projects to display as slides
 const projects = [
   `<div class="project flex fade">
     <h3>Resgistration Form</h3>
@@ -30,6 +33,30 @@ const projects = [
   </div>`
 ]
 
+// displays a list upon clicking the menu button
+window.addEventListener('click', (event) => {
+  // html to insert into list item
+  const html = [
+    `<a href="#about">About</a>`,
+    `<a href="#projects">Projects</a>`,
+    `<a href="#contact">Contact</a>`
+  ];
+  // checks if user clicked the menu button and that there are no list items
+  if (event.target.className === "menu-button" && dropdown.childElementCount === 0) {
+    for (let i = 0; i < html.length; i++) {
+      const li = document.createElement("LI");
+      li.innerHTML = html[i];
+      dropdown.appendChild(li);
+    }
+  // clears list items whenever the use clicks on the screen
+  } else if (dropdown.childElementCount > 0) {
+    for (let i = 0; i < html.length; i++) {
+      dropdown.removeChild(dropdown.lastChild);
+    }
+  }
+});
+
+// displays project divs as a slider
 function showSlides() { 
 	slideIndex++; 
 
@@ -43,11 +70,11 @@ function showSlides() {
 		slideTriggers[i].className = slideTriggers[i].className.replace(" active", ""); 
 	} 
 
-  // Inserts project div and changes current trigger to active
+  // inserts project div and changes current trigger to active
   slideContainer.innerHTML = projects[slideIndex - 1]; 
 	slideTriggers[slideIndex - 1].className += " active"; 	
 
-  // Change div every 2 seconds 
+  // change div every 6 seconds 
   setTimeout(showSlides, 6000); 
 } 
 
