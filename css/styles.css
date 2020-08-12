@@ -272,27 +272,38 @@ body,
     border-radius: 5px;
   }
   .info {
-    width: 55%;
-    margin-left: 2em;
+    width: 50%;
   }
   .profile-pic {
     border-color: #f9f9f9;
     box-shadow: none;
   }
   header {
-    background: url('../images/cleveland.jpg') no-repeat top center ;
+    background: url('../images/cleveland.jpg') no-repeat center;
     background-size: cover;
-    margin-left: 2em;
-    margin-right: 2em;
+    background-attachment: fixed;
+    margin: 1em 0;
+    padding-left: 15%;
+    padding-right: 15%;
+    border-radius: 0;
+    min-height: 300px;
   }
   footer {
     margin: 2em 2em 0;
   }
+  .info,
+  .profile-pic,
   footer p,
   .github,
-  footer address {
+  address {
     margin: auto;
   }
+  footer p {
+    padding-right: 1em;
+    padding-left: 1em;
+    border-right: 1px solid #042738;
+    border-left: 1px solid #042738;
+  } 
   .reach-out {
     display: none;
   }
