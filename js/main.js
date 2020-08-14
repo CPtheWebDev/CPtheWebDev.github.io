@@ -1,6 +1,6 @@
 // Global Variables
 const dropdown = document.querySelector(".menu-ul");
-const navbar = document.querySelector(".hidden-ul");
+const navbar = document.querySelector(".main-nav");
 const sticky = navbar.offsetTop;
 const projects = document.querySelectorAll(".project");
 const slideTriggers = document.querySelectorAll(".trigger");
@@ -61,7 +61,7 @@ function showSlides() {
     projects[slideIndex - 1].style.display = "flex"; 
     slideTriggers[slideIndex - 1].className += " active"; 	
   }
-  timeOut = setTimeout(showSlides, 6000)
+  timeOut = setTimeout(showSlides, 6000);
 } 
 
 showSlides();
