@@ -236,7 +236,6 @@ body,
   header {
     order: -1;
     border-bottom: none;
-    margin-top: 136px; 
   }
   .main-nav {
     order: -2;

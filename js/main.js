@@ -1,6 +1,7 @@
 // Global Variables
 const dropdown = document.querySelector(".menu-ul");
 const navbar = document.querySelector(".main-nav");
+const header = document.querySelector("header");
 const sticky = navbar.offsetTop;
 const projects = document.querySelectorAll(".project");
 const slideTriggers = document.querySelectorAll(".trigger");
@@ -33,10 +34,14 @@ window.addEventListener('click', (event) => {
 // When the user scrolls the page add the sticky class to the navbar when its scroll position is reached. 
 // Remove "sticky" when you leave the scroll position
 window.onscroll = () => {
-  if (window.pageYOffset >= sticky && screen.width >= 1024) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
+  if (screen.width >= 1024) {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+      header.style.marginTop = "136px";
+    } else {
+      navbar.classList.remove("sticky");
+      header.style.marginTop = "0";
+    }
   }
 }
 
