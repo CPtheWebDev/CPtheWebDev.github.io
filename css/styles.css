@@ -12,8 +12,9 @@ a {
 nav a {
   color: #f9f9f9;
 }
-nav,
 header,
+nav,
+section,
 main,
 footer {
   text-align: center;
@@ -31,6 +32,7 @@ footer {
   margin-bottom: 2em;
 }
 header,
+section,
 footer,
 .main-nav,
 .menu-ul,
@@ -74,11 +76,8 @@ h1 {
   font-size: 20px;
   margin-top: 1em;
 }
-.main-nav p {
+.header p {
   font-size: 15px;
-}
-.hidden-ul {
-  padding-left: 0;
 }
 nav li {
   border-top: 1px solid #042738;
@@ -93,21 +92,21 @@ nav li:hover {
 main > h2 {
   margin: 1.5em 0;
 }
-.main-nav div,
+header,
 main > h2 {
   color: #f9f9f9;
   border-bottom: 5px dashed #042738;
   padding-bottom: 1em;
 }
 .hidden-ul,
-header,
+section,
 main,
 footer {
   margin-left: 10px;
   margin-right: 10px;
   
 }
-header,
+section,
 footer,
 .project,
 .contact2 {
@@ -138,54 +137,9 @@ body,
 .contact2,
 .hidden-ul, 
 .secondary-nav ul,
-.slide-container,
 .slide-triggers {
   display: none;
 }
-
-/* Div Slider */
-.slide-triggers {
-  justify-content: space-evenly;
-  width: 150px;
-  margin:  2em auto;
-}
-.trigger {
-  width: 15px;
-  height: 15px;
-  border: 1px solid #f9f9f9;
-  border-radius: 50%;
-}
-.active {
-  background-color: #333;
-}
-.fade { 
-  -webkit-animation-name: fade-div; 
-  -webkit-animation-duration: 6s; 
-  animation-name: fade-div; 
-  animation-duration: 6s;
-} 
-@-webkit-keyframes fade-div { 
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-} 
-@keyframes fade-div { 
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  } 
-} 
 
 /* Dropdown Menu */
 .menu-button {
@@ -201,23 +155,16 @@ body,
 .menu-button:focus {
   background-color: #333;
 }
-
-/* Sticky Nav */
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-.sticky + .content {
-  padding-top: 60px;
+.menu-ul {
+  padding-left: 0;
 }
 
 /* Media Queries */
 @media (min-width: 768px) {
-  header {
+  section {
     flex-direction: row;
   }
-  header {
+  section {
     margin-top: 1em;
   }
   nav ul,
@@ -265,8 +212,11 @@ body,
   h1 {
     margin-top: 2em;
   }
-  .main-nav div {
-    order: 1;
+  .main-nav {
+    order: -2;
+  }
+  header {
+    order: -1;
     border-bottom: none;
   }
   .hidden-ul {
@@ -274,10 +224,14 @@ body,
     margin: 0;
     padding: 2em 0;
     background-color: rgb(7, 74, 106, .9);
+    z-index: 10;
   }
   .contact1 {
     display: flex;
     flex-direction: row;
+  }
+  .contact1 h2 {
+    color: #074a6a;
   }
   .contact2 {
     display: none;
@@ -305,7 +259,7 @@ body,
     border-color: #f9f9f9;
     box-shadow: none;
   }
-  header {
+  section {
     background: url('../images/cleveland.jpg') no-repeat center;
     background-size: cover;
     background-attachment: fixed;
@@ -342,7 +296,8 @@ body,
     min-height: 550px;
   }
   .project-container {
-    display: none;
+    display: block;
+    border-bottom: none;
   }
   .project img {
     height: 375px;
@@ -360,10 +315,59 @@ body,
     border: 3px solid #042738;
     border-radius: 10px;
   }
-  .slide-container {
-    display: block;
+  
+  /* Sticky Nav */
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
   }
+  .sticky + .content {
+    padding-top: 60px;
+  }
+
+  /* Div Slider */
   .slide-triggers {
     display: flex;
+    justify-content: space-evenly;
+    width: 150px;
+    margin:  2em auto;
   }
+  .trigger {
+    width: 15px;
+    height: 15px;
+    border: 1px solid #f9f9f9;
+    border-radius: 50%;
+  }
+  .active {
+    background-color: #333;
+  }
+  .project { 
+    -webkit-animation-name: fade-div; 
+    -webkit-animation-duration: 6s; 
+    animation-name: fade-div; 
+    animation-duration: 6s;
+  } 
+  @-webkit-keyframes fade-div { 
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  } 
+  @keyframes fade-div { 
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    } 
+  } 
 }

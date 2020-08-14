@@ -1,47 +1,11 @@
 // Global Variables
 const dropdown = document.querySelector(".menu-ul");
-const slideContainer = document.querySelector(".slide-container");
+const navbar = document.querySelector(".hidden-ul");
+const sticky = navbar.offsetTop;
+const projects = document.querySelectorAll(".project");
 const slideTriggers = document.querySelectorAll(".trigger");
-let slideIndex = 0; 
-
-// an array of projects to display as slides
-const projects = [
-  `<div class="project flex fade">
-    <h3>Resgistration Form</h3>
-    <p>This project displays a responsive form for users signing up for a newsletter. It uses the different form types available in HTML.</p>
-    <a href="https://cpthewebdev.github.io/techdegree-project-3/">
-      <img src="images/Projects/online-web-form.png" alt="Online Web Form">
-    </a>
-  </div>`,
-  `<div class="project flex fade">
-    <h3>Web Style Guide</h3>
-    <p>This project uses the Sass extension language to create a style guide that can be used to prototype websites.</p>
-    <a href="https://cpthewebdev.github.io/techdegree-project-4/">
-      <img src="images/Projects/web-style-guide.png" alt="Web Style Guide">
-    </a>
-  </div>`,
-  `<div class="project flex fade">
-    <h3>Game Show App</h3>
-    <p>This project is an interactive game using Javascript where a users attempts to guess a random phrase with a limited amount of attmepts.</p>
-    <a href="https://cpthewebdev.github.io/techdegree-project-6/">
-      <img src="images/Projects/game-show-app.png" alt="Game Show App">
-    </a>
-  </div>`,
-  `<div class="project flex fade">
-    <h3>WebApp Dashboard</h3>
-    <p>This project displays the landing page for a WebApp Dashboard and uses a Javascript chart library.</p>
-    <a href="https://cpthewebdev.github.io/techdegree-project-7/">
-      <img src="images/Projects/web-app-dashboard.png" alt="Web App Dashboard">
-    </a>
-  </div>`,
-  `<div class="project flex fade">
-    <h3>Employee directory</h3>
-    <p>Using fetch this project grabs information for 12 random employees from an API and diplays the employess in a directory.</p>
-    <a href="https://cpthewebdev.github.io/techdegree-project-8/">
-      <img src="images/Projects/employee-directory.png" alt="Employee Directory">
-    </a>
-  </div>`
-];
+let slideIndex = 0;
+let timeOut;  
 
 // displays a list upon clicking the menu button
 window.addEventListener('click', (event) => {
@@ -66,18 +30,10 @@ window.addEventListener('click', (event) => {
   }
 });
 
-// When the user scrolls the page, execute myFunction
-window.onscroll = function() {myFunction()};
-
-// Get the navbar
-var navbar = document.querySelector("#navbar");
-
-// Get the offset position of the navbar
-var sticky = navbar.offsetTop;
-
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
+// When the user scrolls the page add the sticky class to the navbar when its scroll position is reached. 
+// Remove "sticky" when you leave the scroll position
+window.onscroll = () => {
+  if (window.pageYOffset >= sticky && screen.width >= 1024) {
     navbar.classList.add("sticky")
   } else {
     navbar.classList.remove("sticky");
@@ -91,19 +47,36 @@ function showSlides() {
 	// checks for boundary to loop slider
 	if (slideIndex > projects.length) { 
 		slideIndex = 1; 
-	} 
+  } 
+  
+  if (screen.width >= 1024) {
+    // removes display from all slides
+    // removes active class from all triggers
+    for (let i = 0; i < projects.length; i++) { 
+      projects[i].style.display = "none"; 
+      slideTriggers[i].className = slideTriggers[i].className.replace(" active", "");
+    } 
 
-  // removes active class from all triggers
-  for (let i = 0; i < slideTriggers.length; i++) { 
-		slideTriggers[i].className = slideTriggers[i].className.replace(" active", ""); 
-	} 
-
-  // inserts project div and changes current trigger to active
-  slideContainer.innerHTML = projects[slideIndex - 1]; 
-	slideTriggers[slideIndex - 1].className += " active"; 	
-
-  // change div every 6 seconds 
-  setTimeout(showSlides, 6000); 
+    // inserts project div and changes current trigger to active
+    projects[slideIndex - 1].style.display = "flex"; 
+    slideTriggers[slideIndex - 1].className += " active"; 	
+  }
+  timeOut = setTimeout(showSlides, 6000)
 } 
 
 showSlides();
+
+// Stops showSlides from running at smaller screens
+// also prevents multiple setTimeout functions from running
+window.addEventListener('resize', () => {
+  clearTimeout(timeOut);
+  if (screen.width >= 1024) {
+    showSlides();
+  }
+  else {
+    // keeps static display at smaller screen sizes
+    for (let i = 0; i < projects.length; i++) { 
+      projects[i].style.display = "flex";
+    }
+  }
+});
