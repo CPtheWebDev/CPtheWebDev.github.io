@@ -9,21 +9,21 @@
   </head>
   <body class="grid">
     
-     <nav class="main-nav">
+     <nav class="main-nav flex">
       <div>
         <h1>My Web Developer Portfolio</h1>
         <p>Designed By Chris Patton</p>
       </div>
       <button class="menu-button">Menu</button>
       <ul class="menu-ul flex"></ul>
-      <ul class="hidden-ul flex">
+      <ul class="hidden-ul flex" id="navbar">
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
     
-    <header class="flex" id="about">
+    <header class="flex content" id="about">
       <div class="info flex">
         <p>My goal is to become a professional Web Developer. I am currently learning how to code and improving my skills. I aspire to create well construced, aesthetically pleasing, dynamic websites.</p>
         <p>I'm looking to focus my energy and settle into one craft that can become a long term career.</p>
@@ -31,7 +31,7 @@
       <img class="profile-pic" src="images/me.jpg" alt="A picture of Christopher Patton">
     </header>
     
-    <main>
+    <main class="content">
       <h2 id="projects">Projects</h2>
       <div class="project-container grid">
         <div class="project flex">
@@ -81,7 +81,7 @@
         </div>
       </div>
       
-      <div class="slide-container"></div>
+      <div class="slide-container content"></div>
       <div class="slide-triggers">
         <div class="trigger"></div>
         <div class="trigger"></div>
@@ -91,7 +91,7 @@
       </div>
     </main>
     
-    <footer class="contact1 flex">
+    <footer class="contact1 content flex">
       <h2 id="contact">Contact Me</h2>
       <p class="reach-out">Feel free to reach out!</p>
       <a class="github" href="https://github.com/CPtheWebDev"></a>
@@ -102,7 +102,7 @@
       <p>Copyright 2020, Christopher Patton</p>
     </footer>
     
-    <nav class="secondary-nav">
+    <nav class="secondary-nav content">
       <a class="to-top" href="#">&uarr; Back to Top &uarr;</a>
       <ul class="flex">
         <li><a href="#about">About</a></li>
