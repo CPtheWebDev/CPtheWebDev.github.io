@@ -38,7 +38,7 @@ footer,
 .menu-ul,
 .info,
 .project,
-.contact2 {
+.skills {
   flex-direction: column;
 }
 
@@ -109,18 +109,27 @@ footer {
 section,
 footer,
 .project,
-.contact2 {
+.skills {
   background-color: #f9f9f9;
   border-radius: 5px;
   padding: 10px;
 }
 .project,
-.contact2 {
+.skills {
   padding-bottom: 2em;
 }
 body, 
 .project-container {
   background-color: #074a6a;
+}
+.info a {
+  color: #000;
+  border: 2px solid #6FBC6D;
+  border-radius: 30px;
+  padding: 7px 0;
+}
+.info a:hover {
+  color: #47535B;
 }
 .secondary-nav,
 .github {
@@ -130,11 +139,10 @@ body,
   margin-top: 2em;
 }
 .github {
-  background-image: url(../images/github.svg);
+  background-image: url(../images/icons/github.svg);
   width: 30px;
   height: 30px;
 }
-.contact2,
 .hidden-ul, 
 .secondary-nav ul,
 .slide-triggers {
@@ -183,22 +191,35 @@ body,
     grid-row-gap: 0;
     border-bottom: 5px dashed #042738;
     padding-bottom: 1em;
-    margin-bottom: 0;
+    margin-bottom: 2em;
   }
   .project,
-  .contact2 {
+  .skills {
     margin: 1em;
+  }
+  .contact {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .reach-out {
+    display: none;
+  }
+  .github {
+    order: 1;
+  }
+  footer p,
+  .github,
+  address {
+    margin: auto;
   }
   ul li {
     width: 40%;
-  }
-  .contact1, 
+  } 
   .to-top,
   .menu-button, 
   ul li:nth-child(3) {
     display: none;
   }
-  .contact2,
   .hidden-ul, 
   .secondary-nav ul {
     display: flex;
@@ -226,14 +247,15 @@ body,
   .hidden-ul {
     padding: 0 0 2em;
   }
-  .contact1 {
-    display: flex;
-    flex-direction: row;
+  .contact {
+    border: 2.5px solid #042738;
+    border-radius: 50px;;
   }
-  .contact1 h2 {
+  .contact h2 {
     color: #074a6a;
+    margin-left: 1em;
   }
-  .contact2 {
+  .skills {
     display: none;
   }
   ul li:nth-child(3) {
@@ -243,14 +265,17 @@ body,
     width: 25%;
     border: 1px solid #042738;
   }
-  .info p {
-    background-color: #f9f9f9;
-    border: 3px solid #074a6a;
-    padding: 1em;
-  }
   ul li,
   .info p {
     border-radius: 5px;
+  }
+  .info p {
+    border: 3px solid #074a6a;
+    padding: 1em;
+  }
+  .info p,
+  .info a {
+    background-color: #f9f9f9;
   }
   .info {
     width: 50%;
@@ -273,10 +298,7 @@ body,
     margin: 2em 2em 0;
   }
   .info,
-  .profile-pic,
-  footer p,
-  .github,
-  address {
+  .profile-pic {
     margin: auto;
   }
   footer p {
@@ -285,12 +307,6 @@ body,
     border-right: 1px solid #042738;
     border-left: 1px solid #042738;
   } 
-  .reach-out {
-    display: none;
-  }
-  .github {
-    order: 1;
-  }
   .project {
     margin: auto 10%;
     min-height: 550px;
@@ -310,8 +326,7 @@ body,
     width: 80%;
     margin: auto;
   }
-  .project,
-  .contact1 {
+  .project {
     border: 3px solid #042738;
     border-radius: 10px;
   }
