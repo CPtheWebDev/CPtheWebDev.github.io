@@ -79,6 +79,7 @@ window.addEventListener('resize', () => {
     showSlides();
   }
   else {
+    header.style.marginTop = "0";
     // keeps static display at smaller screen sizes
     for (let i = 0; i < projects.length; i++) { 
       projects[i].style.display = "flex";
